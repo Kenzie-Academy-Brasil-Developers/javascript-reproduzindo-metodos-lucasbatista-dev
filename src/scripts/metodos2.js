@@ -18,7 +18,7 @@ function callBackMap(element, index, array) {
 function functionMap(array, callback) {
   const newArr = [];
   for (let i = 0; i < array.length; i++) {
-    newArr.push(callBackMap(array[i] * 2, [i], array));
+    newArr.push(callBackMap(array[i], i, array));
   }
   return newArr;
 }
@@ -116,7 +116,7 @@ function callbackReduce(previousValue, currentValue) {
   return previousValue + currentValue;
 }
 
-function functionReduce(array, callback, firstValue = 50) {
+function functionReduce(array, callback, firstValue = 0) {
   for (let i = 0; i < array.length; i++) {
     firstValue = callback(firstValue, array[i]);
   }
